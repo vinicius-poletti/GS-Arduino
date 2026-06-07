@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "Vinicios POLETTI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -41.4, "left": -160.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 231, "left": -77.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 44.4,
+      "left": -140.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -17.7,
+      "left": 43.9,
+      "attrs": { "distance": "3" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 65.2, "left": 259.2, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 120,
+      "left": -154.15,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "bb1:bp.22", "bb1:27b.g", "red", [ "v0" ] ],
+    [ "bb1:bn.24", "bb1:30b.g", "black", [ "h40", "v-68.5" ] ],
+    [ "led1:A", "bb1:3b.g", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:2b.g", "", [ "$bb" ] ],
+    [ "ultrasonic1:VCC", "bb1:27b.f", "", [ "$bb" ] ],
+    [ "ultrasonic1:TRIG", "bb1:28b.f", "", [ "$bb" ] ],
+    [ "ultrasonic1:ECHO", "bb1:29b.f", "", [ "$bb" ] ],
+    [ "ultrasonic1:GND", "bb1:30b.f", "", [ "$bb" ] ],
+    [ "servo1:GND", "bb1:bn.23", "black", [ "h0" ] ],
+    [ "servo1:V+", "bb1:bp.25", "green", [ "h0" ] ],
+    [ "servo1:PWM", "uno:10", "green", [ "h0" ] ],
+    [ "bb1:28b.g", "uno:8", "green", [ "v0" ] ],
+    [ "bb1:29b.g", "uno:7", "green", [ "v0" ] ],
+    [ "uno:5V", "bb1:bp.20", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:bn.21", "black", [ "v0" ] ],
+    [ "bb1:3b.h", "uno:13", "green", [ "v0" ] ],
+    [ "r1:1", "bb1:2b.h", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:bn.1", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
